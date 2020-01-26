@@ -8,10 +8,14 @@
 }
 
 html {
+  background: url("../images/bg-bottom.svg");
+  background-position: left bottom;
+  background-repeat: no-repeat;
   box-sizing: border-box;
   color: #494c5f;
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
+  position: relative;
 }
 
 html, body {
@@ -38,6 +42,16 @@ h2 {
   padding: 2% 12.5%;
   text-align: center;
   width: 100%;
+}
+.container:after {
+  background: url("../images/bg-bottom.svg");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  content: "";
+  height: 700px;
+  position: absolute;
+  width: 400px;
+  z-index: 0;
 }
 
 .toggle-wrapper {
@@ -100,6 +114,7 @@ input:checked + label:after {
   flex-grow: 1;
   justify-content: space-evenly;
   margin: 2rem 0;
+  z-index: 1;
 }
 
 .pricing {
@@ -121,14 +136,13 @@ input:checked + label:after {
   padding: 1.5rem 0;
 }
 
-.featuresli:first-child {
-  border-top: 1px solid #b3b5c6;
-}
-
 .feature-item {
   border-bottom: 1px solid #b3b5c6;
   line-height: 3rem;
   list-style-type: none;
+}
+.feature-item.first {
+  border-top: 1px solid #b3b5c6;
 }
 
 .learn-more {
