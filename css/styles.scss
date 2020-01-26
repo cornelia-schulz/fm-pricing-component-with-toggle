@@ -1,3 +1,5 @@
+$primary: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+$white: #fff;
 $very-light-blue: hsl(240, 78%, 98%);
 $light-blue: hsl(234, 14%, 74%);
 $blue: hsl(233, 13%, 49%);
@@ -14,12 +16,21 @@ $dark-blue: hsl(232, 13%, 33%);
 
 html {
   box-sizing: border-box;
+  color: $dark-blue;
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
 }
 
 html, body {
-    height:100%;
+  height:100%;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1rem;
 }
 
 .container {
@@ -28,15 +39,21 @@ html, body {
   flex-direction: column;
   height: 100%;
   justify-content: center;
-  padding: 2rem 4rem;
+  padding: 2% 12.5%;
   text-align: center;
   width: 100%;
 }
 
 .toggle-wrapper {
   align-items: center;
+  color: $blue;
   display: flex;
   justify-content: center;
+}
+
+.toggle {
+  display: inline-flex;
+  margin: 2rem 1rem;
 }
 
 input[type=checkbox]{
@@ -46,7 +63,7 @@ input[type=checkbox]{
 }
 
 label {
-  background: $dark-blue;
+  background: $primary;
   border-radius: 100px;
   cursor: pointer;
   display: block;
@@ -76,11 +93,94 @@ label {
 
 input{
   &:checked + label {
-	background: $dark-blue;
+	background: $primary;
   }
 } 
 
 input:checked + label:after {
 	left: calc(100% - 5px);
 	transform: translateX(-100%);
+}
+
+.pricing-wrapper {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  margin: 2rem 0;
+}
+
+.pricing {
+  background-color: $white;
+  border-radius: 15px;
+  flex-basis: 33%;
+  height: 90%;
+  padding: 2%;
+
+  &.active {
+    background: $primary;
+    color: $very-light-blue;
+    height: 100%;
+    padding: 4% 2%;
+  }
+}
+
+.money {
+  font-size: 3rem;
+  padding: 1.5rem 0;
+}
+
+.features {
+  &li:first-child {
+    border-top: 1px solid $light-blue;
+  }
+}
+
+.feature-item {
+  border-bottom: 1px solid $light-blue;
+  line-height: 3rem;
+  list-style-type: none;
+}
+
+.learn-more {
+  background: $primary;
+  border: 1px solid $light-blue;
+  border-radius: 15px;
+  color: $very-light-blue;
+  font-size: 15px;
+  line-height: 3rem;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  width: 90%;
+
+ &.active,
+ &:hover {
+  background: $very-light-blue;
+  color: $dark-blue;
+ }
+
+ &.active {
+  &:hover {
+    background: $primary;
+    color: $very-light-blue;
+  }
+ }
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 650px) {
+  body, html {
+    height: auto;
+  }
+  .pricing-wrapper {
+    flex-direction: column;
+  }
+  .pricing {
+    flex-basis: 100%;
+    margin-bottom: 5%;
+    width: 100%;
+  }
 }

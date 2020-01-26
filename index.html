@@ -16,37 +16,43 @@
       <span>Annually</span>
       <div class="toggle">
         <input type="checkbox" id="switch" />
-        <label for="switch">Toggle</label>
+        <label for="switch" onclick="toggleView()">Toggle</label>
       </div>
       <span>Monthly</span>
     </div>
     <div class="pricing-wrapper">
       <div class="pricing">
-        Basic
-        &dollar;19.99
-        &dollar;199.99
-        500 GB Storage
-        2 Users Allowed
-        Send up to 3 GB
-        <button>Learn More</button>
+        <h2>Basic</h2>
+        <p class="money monthly hidden">&dollar;19.99</p>
+        <p class="money annually">&dollar;199.99</p>
+        <ul class="features">
+          <li class="feature-item">500 GB Storage</li>
+          <li class="feature-item">2 Users Allowed</li class="feature-item">
+          <li class="feature-item">Send up to 3 GB</li class="feature-item">
+        </ul>
+        <button class="learn-more">Learn More</button>
+      </div>
+      <div class="pricing active">
+        <h2>Professional</h2>
+        <p class="money monthly hidden">&dollar;24.99</p>
+        <p class="money annually">&dollar;249.99</p>
+        <ul class="features">
+          <li class="feature-item">1 TB Storage</li class="feature-item">
+          <li class="feature-item">5 Users Allowed</li class="feature-item">
+          <li class="feature-item">Send up to 10 GB</li class="feature-item">
+        </ul>
+        <button class="learn-more active">Learn More</button class="learn-more">
       </div>
       <div class="pricing">
-        Professional
-        &dollar;24.99
-        &dollar;249.99
-        1 TB Storage
-        5 Users Allowed
-        Send up to 10 GB
-        <button>Learn More</button>
-      </div>
-      <div class="pricing">
-        Master
-        &dollar;39.99
-        &dollar;399.99
-        2 TB Storage
-        10 Users Allowed
-        Send up to 20 GB
-        <button>Learn More</button>
+        <h2>Master</h2>
+        <p class="money monthly hidden">&dollar;39.99</p>
+        <p class="money annually">&dollar;399.99</p>
+        <ul class="features">
+          <li class="feature-item">2 TB Storage</li class="feature-item">
+          <li class="feature-item">10 Users Allowed</li class="feature-item">
+          <li class="feature-item">Send up to 20 GB</li class="feature-item">
+        </ul>
+        <button class="learn-more">Learn More</button class="learn-more">
       </div>
     </div>
     
@@ -55,5 +61,7 @@
       Coded by <a href="#">Cornelia Schulz</a>.
     </div>
   </div>
+
+  <script type="text/javascript" src="./js/toggle.js"></script>
 </body>
 </html>
